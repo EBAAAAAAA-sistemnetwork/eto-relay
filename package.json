@@ -1,0 +1,6 @@
+{
+  "name": "eto-relay",
+  "version": "1.0.0",
+  "scripts": { "start": "node index.js" },
+  "dependencies": { "gun": "^0.2020.1239" }
+}
