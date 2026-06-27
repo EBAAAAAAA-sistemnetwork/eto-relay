@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: eto-relay
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
