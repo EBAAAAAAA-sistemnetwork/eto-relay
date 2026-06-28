@@ -1,10 +1,14 @@
 name: Keep relay alive
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '*/20 * * * *'
   workflow_dispatch:
 jobs:
-  ping:
+  keepalive:
     runs-on: ubuntu-latest
     steps:
-      - run: curl -s -o /dev/null -w '%{http_code}' https://glorious-space-barnacle-4qjxqj7xq75jf7xvw-3000.app.github.dev/gun || true
+      - run: |
+          curl -s -o /dev/null https://glorious-space-barnacle-4qjxqj7xq75jf7xvw-3000.app.github.dev/gun || true
+          sleep 60
+          curl -s -o /dev/null https://glorious-space-barnacle-4qjxqj7xq75jf7xvw-3000.app.github.dev/gun || true
+          
